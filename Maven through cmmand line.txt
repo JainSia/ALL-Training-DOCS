@@ -1,0 +1,81 @@
+download maven from apache 
+
+I'd used apache-maven-3.5.bin.jar
+
+set the path till bin in env variable or 
+
+type it : path=c:\apache-maven-3.5\bin;c:\windows;c;\windows\system32 on cmd
+
+create a folder of ur choice (I named it maven-proj)
+
+ex:
+simple java project
+dynamic java project
+
+so the command for--->
+1. simple java project is:
+mvn archetype:generate -DgroupId=com.yash.mavapp -DartifactId=mavapp-test -DarchetypeArtifactId=maven-archetype-quickstart -DinteactiveMode=false
+maven went to archetype information in repository and get all information
+groupId gives info about the group 
+artifactId we want to create the project
+maven also added pom.xml
+junit dependency was added by default
+
+Maven Repository:
+archetype means it create a folder structure for u based on what kind of proj u want.
+different type of project you want to create 
+folderStructure info
+
+dependency information
+List of all the jar file you need in your project and third party jar also
+
+2. webapp java project is:
+mvn archetype:generate -DgroupId=com.yash.mavapp -DartifactId=mavapp-test -DarchetypeArtifactId=maven-archetype-webapp -DinteactiveMode=false
+
+so based on your requirement you can change the archetype and create your own project ... :-)
+
+---------------------------------------------------------------------------------------------------------------------------
+on cmd u'll see so many lines 
+these are all the plugin required by maven to create this kind of project .
+It'll create a folder m2 in this folder it'll put all the files it is a kind of repository. 
+
+for compilation go in project folder ex: maven-app
+and 
+on cmd > mvn compile
+eve
+and when i say mvn install
+
+it'll create a jar file for me.
+-------------------------------------------------------------------------------------------------------------------
+ cmd > mvn package
+ it gonna generate a build project
+ 
+ it'll create a jar with the folder structure inside the target folder.
+ 
+java -cp target/{jarName} {className{ex. com.yash.main.Startup}}
+
+-----------------------------------------------------------------------------------------------------------------------------
+MAVEN
+project
+Build
+
+
+Maven build:
+
+mvn compile
+mvn package
+
+main- actual source code
+test-  test cases
+
+build life cycle in every build there is a lifecyle.
+Consist of phases
+
+1. validate phase - it checks the order like we had done configuration and place file properly
+2. compile phase
+3. test phase - it'll execute the test class
+4. package- if all these 3 phases done in poper manner the only packaging can be done.
+5. install phase - it'll install the package(artifact) into the local maven repository.
+
+----------------------------------------------------------------------------
+
